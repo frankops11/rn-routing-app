@@ -73,9 +73,9 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.navigationapp"
+    namespace "com.navigation"
     defaultConfig {
-        applicationId "com.navigationapp"
+        applicationId "com.navigation"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
