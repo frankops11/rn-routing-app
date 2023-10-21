@@ -1,10 +1,11 @@
 import {StackScreenProps} from '@react-navigation/stack';
 import React from 'react';
 import {Button, Text, View} from 'react-native';
+import {RootStackParamList} from '../types/navigationTypes';
 
-interface HomeProps extends StackScreenProps<any, any> {}
+type HomeScreenProps = StackScreenProps<RootStackParamList, 'Home'>;
 
-const Home: React.FC<HomeProps> = ({navigation}) => {
+const Home: React.FC<HomeScreenProps> = ({navigation}) => {
   return (
     <View>
       <Text>Home</Text>
@@ -14,7 +15,15 @@ const Home: React.FC<HomeProps> = ({navigation}) => {
       />
       <Button
         title="Go to settings"
-        onPress={() => navigation.navigate('Settings')}
+        onPress={() => navigation.navigate('Profile')}
+      />
+      <Button
+        title="Go page Secret"
+        onPress={() =>
+          navigation.navigate('Secret', {
+            name: 'Francisco ',
+          })
+        }
       />
     </View>
   );
