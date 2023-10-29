@@ -1,18 +1,22 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-import Contacts from '../screens/Contacts';
 import ShoppingCart from '../screens/ShoppingCart';
-import WhisList from '../screens/WhisList';
+
+import StackNavigator from './StackNavigator';
+import {TopTabNavigatorCustom} from './TopTabNavigator';
 
 const Tab = createBottomTabNavigator();
 
 function BottomTabsNavigator() {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="Contacts" component={Contacts} />
+    <Tab.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
+      <Tab.Screen name="Stack navigator" component={StackNavigator} />
       <Tab.Screen name="Shopping Carts" component={ShoppingCart} />
-      <Tab.Screen name="WhisList" component={WhisList} />
+      <Tab.Screen name="WhisList" component={TopTabNavigatorCustom} />
     </Tab.Navigator>
   );
 }
